@@ -41,8 +41,8 @@ mysql:
   ports:
     # Allow client to access 3306
     - "3306:3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD
   volumes:
     # NOTE: your data will be stored in ./mysql
     - ./mysql:/var/lib/mysql
-  environment:
-    - MYSQL_ROOT_PASSWORD=your_mysql_password
