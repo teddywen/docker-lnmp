@@ -1,6 +1,7 @@
 # web server
 nginx:
-  image: daocloud.io/nginx:latest
+  # image: daocloud.io/nginx:latest
+  build: ./nginx
   ports:
     - "80:80"
     - "443:443"
@@ -13,11 +14,13 @@ nginx:
     # certificates
     - ./nginx/ca/server.crt/:/etc/nginx/server.crt:ro
     - ./nginx/ca/server.key/:/etc/nginx/server.key:ro
+  restart: on-failure
   links:
     - fpm:__DOCKER_PHP_FPM__
 
 # php-fpm
 fpm:
+  # image: daocloud.io/php:7.0.5-fpm
   build: ./php-fpm
   ports:
     - "9000"
@@ -32,12 +35,14 @@ fpm:
     # - DB_DATABASE=
     # - DB_USERNAME=
     # - DB_PASSWORD=
+  restart: on-failure
   links:
     - mysql:mysql
 
 # database
 mysql:
-  image: daocloud.io/mysql:latest
+  # image: daocloud.io/mysql:latest
+  build: ./mysql
   ports:
     # Allow client to access 3306
     - "3306:3306"
@@ -45,4 +50,5 @@ mysql:
     - MYSQL_ALLOW_EMPTY_PASSWORD=yes
   volumes:
     # NOTE: your data will be stored in ./mysql
-    - ./mysql:/var/lib/mysql
+    - ./mysql/data:/var/lib/mysql
+  restart: on-failure
