@@ -2,7 +2,7 @@
 # See: https://hub.docker.com/_/php/
 ######
 
-FROM php:7.0.5-fpm
+FROM daocloud.io/php:7.0.5-fpm
 MAINTAINER micooz <micooz@hotmail.com>
 
 ######
