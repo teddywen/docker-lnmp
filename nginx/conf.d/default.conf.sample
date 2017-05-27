@@ -9,7 +9,7 @@ server {
 
     root   /usr/share/nginx/html;
     index index.html index.htm index.php;
-    server_name  www.teddywen.com;
+    server_name  localhost;
 
     charset utf-8;
     client_max_body_size 128M;
