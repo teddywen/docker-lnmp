@@ -3,4 +3,3 @@
 *.pem
 *.crt
 *.csr
-mysql/data/*
