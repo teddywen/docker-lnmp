@@ -11,6 +11,12 @@ LABEL com.candlesgo.image="teddywen/fpm:1.0.0" \
       com.candlesgo.release-date="2017-05-29"
 
 ######
+# Change apt sources from debian to netease
+# link: http://mirrors.163.com/.help/debian.html
+######
+COPY ./sources.list /etc/apt/sources.list
+
+######
 # You can install php extensions using docker-php-ext-install
 ######
 

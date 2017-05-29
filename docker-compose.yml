@@ -22,8 +22,8 @@ nginx:
 fpm:
   # image: daocloud.io/php:7.0.5-fpm
   build: ./php-fpm
-  ports:
-    - "9000"
+  # ports:
+  #   - "9000"
   volumes:
     - ./app/src:/usr/share/nginx/html
     # Your php.ini
