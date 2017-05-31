@@ -2,6 +2,7 @@
 nginx:
   # build: ./nginx
   image: teddywen/lnmp-nginx:1.0.0
+  container_name: lnmp-nginx
   ports:
     - "80:80"
     - "443:443"
@@ -22,6 +23,7 @@ nginx:
 fpm:
   # build: ./php-fpm
   image: teddywen/lnmp-fpm:1.0.0
+  container_name: lnmp-fpm
   # ports:
   #   - "9000"
   volumes:
@@ -44,6 +46,7 @@ fpm:
 mysql:
   # build: ./mysql
   image: teddywen/lnmp-mysql:1.0.0
+  container_name: lnmp-mysql
   ports:
     # Allow client to access 3306
     - "3306:3306"
@@ -52,4 +55,29 @@ mysql:
   volumes:
     # NOTE: your data will be stored in ./mysql
     - ./mysql/data:/var/lib/mysql
+  restart: on-failure
+
+# cache
+memcached:
+  # build: ./memcached
+  image: teddywen/lnmp-memcached:1.0.0
+  container_name: lnmp-memcached
+  ports:
+    # Allow client to access 11211
+    - "127.0.0.1:11211:11211"
+  command: memcached -m 256
+  restart: on-failure
+
+# redis
+redis:
+  # build: ./redis
+  image: teddywen/lnmp-redis:1.0.0
+  container_name: lnmp-redis
+  ports:
+    # Allow client to access 6379
+    - "127.0.0.1:6379:6379"
+  command: redis-server --appendonly yes
+  volumes:
+    # NOTE: your data will be stored in ./redis
+    - ./redis/data:/data
   restart: on-failure
