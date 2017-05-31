@@ -1,18 +1,32 @@
+# Forked
+
+Forked from [micooz/docker-lnmp](https://github.com/micooz/docker-lnmp)
+
 # Introduction
 
-Deploy lnmp(Linux, Nginx, MySQL, PHP7) using docker.
+Deploy enhanced lnmp(Linux, Nginx, MySQL, PHP7, MEMCACHED, REDIS) using docker for your development.
 
-I want to share my ideas and designs about Web-Deploying using Docker with you.
+### Docker Image
+
+Using daocloud mirror as base docker image.
+
+- [daocloud.io/nginx:latest](https://hub.docker.com/_/nginx/)
+- [daocloud.io/php:7.0.5-fpm](https://hub.docker.com/_/php/)
+- [daocloud.io/mysql:latest](https://hub.docker.com/_/mysql/)
+- [daocloud.io/memcached:latest](https://hub.docker.com/_/memcached/)
+- [daocloud.io/redis:latest](https://hub.docker.com/_/redis/)
 
 ### Architecture
 
 ![architecture][1]
 
-The whole app is divided into three Containers:
+The whole app is divided into five Containers:
 
 1. Nginx is running in `Nginx` Container, which handles requests and makes responses.
-2. PHP or PHP-FPM is put in `PHP-FPM` Container, it retrieves php scripts from host, interprets, executes then responses to Nginx. If necessary, it will connect to `MySQL` as well.
+2. PHP or PHP-FPM is put in `PHP-FPM` Container, it retrieves php scripts from host, interprets, executes then responses to Nginx. It installed extensions yii and laravel needs. If necessary, it will connect to `MySQL` as well.
 3. MySQL lies in `MySQL` Container, 
+4. Memcached for web cache.
+5. Redis for web k-v database.
 
 Our app scripts are located on host, you can edit files directly without rebuilding/restarting whole images/containers.
 
