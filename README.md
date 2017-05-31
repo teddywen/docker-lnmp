@@ -30,7 +30,7 @@ The whole app is divided into five Containers:
 
 Our app scripts are located on host, you can edit files directly without rebuilding/restarting whole images/containers.
 
-### Configure
+### Configuration
 
 * Setup [php-development.ini](php-fpm/php-development.ini) if necessary.
 
@@ -49,7 +49,7 @@ xdebug.remote_port = 9000
 ; xdebug.remote_log = /tmp/xdebug_remote.log
 ```
 
-* Setup [docker-compose.yml](docker-compose.yml), mount your website dir on the nginx and fpm container.
+* Setup [docker-compose.yml](docker-compose.yml), mount your website directory on the nginx and fpm container.
 
 ```yml
 nginx:
