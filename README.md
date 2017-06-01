@@ -73,7 +73,7 @@ Without building images one by one, you can make use of `docker-compose` and sim
 
     $ sudo docker-compose up
 
-Or:
+Or using detached mode:
 
     $ sudo docker-compose up -d
 
