@@ -4,7 +4,7 @@ Forked from [micooz/docker-lnmp](https://github.com/micooz/docker-lnmp)
 
 # Introduction
 
-Deploy enhanced lnmp(Linux, Nginx, MySQL, PHP7, MEMCACHED, REDIS) using docker for your development.
+Deploy enhanced lnmp(Linux, Nginx, MySQL, PHP7, Memcached, Redis) using docker for your development.
 
 ### Docker Image
 
