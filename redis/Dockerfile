@@ -2,8 +2,8 @@
 # See: https://hub.docker.com/_/redis/
 ######
 
-FROM daocloud.io/redis:latest
-LABEL com.candlesgo.image="teddywen/lnmp-redis:1.0.0" \
+FROM hub.c.163.com/library/redis:latest
+LABEL com.candlesgo.image="hub.c.163.com/teddywen/lnmp-redis:1.0.0" \
       com.candlesgo.author="teddywen" \
       com.candlesgo.email="763323819@qq.com" \
       com.candlesgo.description="This is a redis image for yii2 and laravel." \

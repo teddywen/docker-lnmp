@@ -2,8 +2,8 @@
 # See: https://hub.docker.com/_/php/
 ######
 
-FROM daocloud.io/php:7.0.5-fpm
-LABEL com.candlesgo.image="teddywen/lnmp-fpm:1.0.0" \
+FROM hub.c.163.com/library/php:7.1.0-fpm
+LABEL com.candlesgo.image="hub.c.163.com/teddywen/lnmp-fpm:1.0.0" \
       com.candlesgo.author="teddywen" \
       com.candlesgo.email="763323819@qq.com" \
       com.candlesgo.description="This is a fpm image for yii2 and laravel." \
@@ -80,11 +80,14 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 ######
 RUN apt-get update && apt-get install -y \
         curl \
+        wget \
     && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
     && apt-get install -y \
         nodejs \
         build-essential \
-    && apt-get remove -y curl
+    && apt-get remove -y \
+        curl \
+        wget
 
 ######
 # Tools install

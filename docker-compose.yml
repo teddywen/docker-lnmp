@@ -4,7 +4,7 @@ services:
   # web server
   nginx:
     # build: ./nginx
-    image: teddywen/lnmp-nginx:1.0.0
+    image: hub.c.163.com/teddywen/lnmp-nginx:1.0.0
     container_name: lnmp-nginx
     ports:
       - "80:80"
@@ -20,12 +20,12 @@ services:
       - ./nginx/ca/server.key/:/etc/nginx/server.key:ro
     restart: on-failure
     networks:
-     - lnmp-frontend
+      - lnmp-frontend
 
   # php-fpm
   fpm:
     # build: ./php-fpm
-    image: teddywen/lnmp-fpm:1.0.0
+    image: hub.c.163.com/teddywen/lnmp-fpm:1.0.0
     container_name: lnmp-fpm
     # ports:
     #   - "9000"
@@ -42,14 +42,17 @@ services:
       # - DB_USERNAME=
       # - DB_PASSWORD=
     restart: on-failure
+    # dns:
+    # Accelerate your network within container
+    #   - 192.168.3.1
     networks:
-     - lnmp-frontend
-     - lnmp-backend
+      - lnmp-frontend
+      - lnmp-backend
 
   # database
   mysql:
     # build: ./mysql
-    image: teddywen/lnmp-mysql:1.0.0
+    image: hub.c.163.com/teddywen/lnmp-mysql:1.0.0
     container_name: lnmp-mysql
     ports:
       # Allow client to access 3306
@@ -61,12 +64,12 @@ services:
       - ./mysql/data:/var/lib/mysql
     restart: on-failure
     networks:
-     - lnmp-backend
+      - lnmp-backend
 
   # cache
   memcached:
     # build: ./memcached
-    image: teddywen/lnmp-memcached:1.0.0
+    image: hub.c.163.com/teddywen/lnmp-memcached:1.0.0
     container_name: lnmp-memcached
     ports:
       # Allow client to access 11211
@@ -74,12 +77,12 @@ services:
     command: memcached -m 256
     restart: on-failure
     networks:
-     - lnmp-backend
+      - lnmp-backend
 
   # redis
   redis:
     # build: ./redis
-    image: teddywen/lnmp-redis:1.0.0
+    image: hub.c.163.com/teddywen/lnmp-redis:1.0.0
     container_name: lnmp-redis
     ports:
       # Allow client to access 6379
@@ -90,7 +93,7 @@ services:
       - ./redis/data:/data
     restart: on-failure
     networks:
-     - lnmp-backend
+      - lnmp-backend
 networks:
   lnmp-frontend:
   lnmp-backend:

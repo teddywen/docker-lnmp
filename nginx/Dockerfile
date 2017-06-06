@@ -2,8 +2,8 @@
 # See: https://hub.docker.com/_/nginx/
 ######
 
-FROM daocloud.io/nginx:latest
-LABEL com.candlesgo.image="teddywen/lnmp-nginx:1.0.0" \
+FROM hub.c.163.com/library/nginx:latest
+LABEL com.candlesgo.image="hub.c.163.com/teddywen/lnmp-nginx:1.0.0" \
       com.candlesgo.author="teddywen" \
       com.candlesgo.email="763323819@qq.com" \
       com.candlesgo.description="This is a nginx image for yii2 and laravel." \
