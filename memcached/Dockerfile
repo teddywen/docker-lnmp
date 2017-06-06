@@ -3,7 +3,7 @@
 ######
 
 FROM daocloud.io/memcached:latest
-LABEL com.candlesgo.image="teddywen/memcached:1.0.0" \
+LABEL com.candlesgo.image="teddywen/lnmp-memcached:1.0.0" \
       com.candlesgo.author="teddywen" \
       com.candlesgo.email="763323819@qq.com" \
       com.candlesgo.description="This is a memcached image for yii2 and laravel." \

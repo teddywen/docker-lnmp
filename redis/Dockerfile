@@ -3,7 +3,7 @@
 ######
 
 FROM daocloud.io/redis:latest
-LABEL com.candlesgo.image="teddywen/redis:1.0.0" \
+LABEL com.candlesgo.image="teddywen/lnmp-redis:1.0.0" \
       com.candlesgo.author="teddywen" \
       com.candlesgo.email="763323819@qq.com" \
       com.candlesgo.description="This is a redis image for yii2 and laravel." \
