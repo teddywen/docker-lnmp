@@ -97,6 +97,9 @@ services:
     # build: ./bash
     image: hub.c.163.com/teddywen/lnmp-bash:1.0.0
     container_name: lnmp-bash
+    command: ["bash"]
+    stdin_open: true
+    tty: true
     volumes:
       # Mount www here.
       - ./app/src:/usr/share/nginx/html
