@@ -17,6 +17,13 @@ LABEL com.candlesgo.image="hub.c.163.com/teddywen/lnmp-bash:1.0.0" \
 COPY ./sources.list /etc/apt/sources.list
 
 ######
+# Custom extensions install
+######
+RUN apt-get update && apt-get install -y \
+        zlib1g-dev \
+      && docker-php-ext-install -j$(nproc) zip
+
+######
 # Php composer install
 ######
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
@@ -44,6 +51,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get update && apt-get install -y \
         dnsutils \
         traceroute \
+        unzip \
         wget \
         curl \
         git \

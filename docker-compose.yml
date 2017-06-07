@@ -104,6 +104,8 @@ services:
       # Mount www here.
       - ./app/src:/usr/share/nginx/html
       - /Users/wen.xiang/vagrant_getting_started/www:/usr/share/nginx/html/intv
+    # Your php.ini
+      - ./bash/php-development.ini:/usr/local/etc/php/php.ini:ro
     restart: on-failure
     # dns:
     # Accelerate your network within container
