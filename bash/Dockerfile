@@ -43,7 +43,8 @@ RUN apt-get update && apt-get install -y \
         build-essential \
     && apt-get remove -y \
         curl \
-        wget
+        wget \
+    && npm install cnpm -g --registry=https://registry.npm.taobao.org
 
 ######
 # Tools install
