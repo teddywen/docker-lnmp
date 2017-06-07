@@ -42,9 +42,6 @@ services:
       # - DB_USERNAME=
       # - DB_PASSWORD=
     restart: on-failure
-    # dns:
-    # Accelerate your network within container
-    #   - 192.168.3.1
     networks:
       - lnmp-frontend
       - lnmp-backend
@@ -93,6 +90,23 @@ services:
       - ./redis/data:/data
     restart: on-failure
     networks:
+      - lnmp-backend
+
+  # bash
+  bash:
+    # build: ./bash
+    image: hub.c.163.com/teddywen/lnmp-bash:1.0.0
+    container_name: lnmp-bash
+    volumes:
+      # Mount www here.
+      - ./app/src:/usr/share/nginx/html
+      - /Users/wen.xiang/vagrant_getting_started/www:/usr/share/nginx/html/intv
+    restart: on-failure
+    # dns:
+    # Accelerate your network within container
+    #   - 192.168.3.1
+    networks:
+      - lnmp-frontend
       - lnmp-backend
 networks:
   lnmp-frontend:
