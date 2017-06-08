@@ -3,10 +3,10 @@
 ######
 
 FROM hub.c.163.com/library/php:7.1.0
-LABEL com.candlesgo.image="hub.c.163.com/teddywen/lnmp-bash:1.0.0" \
+LABEL com.candlesgo.image="hub.c.163.com/teddywen/lnmp-terminal:1.0.0" \
       com.candlesgo.author="teddywen" \
       com.candlesgo.email="763323819@qq.com" \
-      com.candlesgo.description="This is a bash image for yii2 and laravel." \
+      com.candlesgo.description="This is a terminal image for yii2 and laravel." \
       com.candlesgo.version="1.0.0" \
       com.candlesgo.release-date="2017-05-29"
 
