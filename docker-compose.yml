@@ -25,6 +25,7 @@ services:
   # php-fpm
   fpm:
     # build: ./php-fpm
+    # image: hub.c.163.com/teddywen/lnmp-fpm-56:1.0.0
     image: hub.c.163.com/teddywen/lnmp-fpm:1.0.0
     container_name: lnmp-fpm
     # ports:
